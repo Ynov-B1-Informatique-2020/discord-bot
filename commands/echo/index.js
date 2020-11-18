@@ -1,3 +1,3 @@
-module.exports = function (event, args) {
-  event.channel.send(args.join(' '));
+module.exports = function (opts) {
+  opts.event.channel.send(opts.argsRaw.join(' '));
 }

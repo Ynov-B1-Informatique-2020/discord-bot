@@ -1,10 +1,10 @@
-module.exports = function (event, args, client) {
-  event.channel.send({
+module.exports = function (opts) {
+  opts.event.channel.send({
     embed: {
       color: 3447003,
       author: {
-        name: client.user.username,
-        icon_url: client.user.avatarURL()
+        name: opts.client.user.username,
+        icon_url: opts.client.user.avatarURL()
       },
       title: "About",
       url: "https://github.com/Ynov-B1-Informatique-2020/discord-bot",
@@ -19,7 +19,7 @@ module.exports = function (event, args, client) {
       ],
       timestamp: new Date(),
       footer: {
-        icon_url: client.user.avatarURL(),
+        icon_url: opts.client.user.avatarURL(),
       }
     }
   });

@@ -1,14 +1,14 @@
-module.exports = function (event, args) {
-  event.delete();
+module.exports = function (opts) {
+  opts.event.delete();
   let delay, message;
-  if (typeof parseInt(args[0]) == 'number') {
-    delay = args[0];
-    message = args.splice(1).join(' ');
+  if (typeof parseInt(opts.argsRaw[0]) == 'number') {
+    delay = opts.argsRaw[0];
+    message = opts.argsRaw.splice(1).join(' ');
   }else{
     delay = 10;
-    message = args.join(' ');
+    message = opts.argsRaw.join(' ');
   }
-  event.channel.send(" **"+ event.author.username + "** dit : " + message+"\n\n Ce message s'auto-detruira dans "+ delay +" secondes")
+  opts.event.channel.send(" **"+ opts.event.author.username + "** dit : " + message + "\n\n Ce message s'auto-detruira dans " + delay + " secondes")
     .then(function(message) {
       setTimeout(function(){
         message.delete();
