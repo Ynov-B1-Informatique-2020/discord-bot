@@ -7,3 +7,5 @@
 
 exports.ping = require('./ping');
 exports.echo = require('./echo');
+exports.about = require('./about');
+exports.deleteafter = require('./deleteafter');

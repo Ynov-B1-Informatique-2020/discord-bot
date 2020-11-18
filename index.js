@@ -35,7 +35,7 @@ client.on('message', event => {
 
     // If the command exist in the object Commands, execute it
     if (command in Commands ) {
-      Commands[command](event, args);
+      Commands[command](event, args, client);
     } else {
       event.channel.send('Raté cette commande n\'existe pas camarade.');
     }
