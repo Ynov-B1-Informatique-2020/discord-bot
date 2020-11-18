@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Ynov-B1-Informatique-2020/discord-bot#readme",
   "dependencies": {
-    "discord.js": "12.4.1"
+    "discord.js": "12.4.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32"
   }
 }
