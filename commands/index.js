@@ -6,8 +6,14 @@
 */
 
 exports.ping = require('./ping');
+exports.jsp = require('./jsp');
 exports.echo = require('./echo');
 exports.about = require('./about');
 exports.deleteafter = require('./deleteafter');
 exports.date = require('./date');
+exports.avatar = require('./avatar');
+exports.antoine = require('./antoine');
+exports.twitter = require('./twitter');
 exports.weather = require('./weather');
+
+
