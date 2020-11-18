@@ -30,7 +30,8 @@ client.on('message', event => {
     console.log("Command :\t", event.content);
 
     // Slit the message on each whitespace
-    let splitedMessage = event.content.substring(1).split(' ');
+    let splitedMessage = event.content.substring(Config.prefix.length).split(' ');
+
     // Save the first element of the array as command
     // Transform the string to lower case: EcHO -> echo
     let command = splitedMessage[0].toLowerCase();
@@ -40,7 +41,7 @@ client.on('message', event => {
     let args = Utils.argsParser(argsRaw);
 
     // If the command exist in the object Commands, execute it
-    if (command in Commands ) {
+    if ( command in Commands ) {
       Commands[command]({
         event,
         args,
