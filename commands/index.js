@@ -15,5 +15,6 @@ exports.avatar = require('./avatar');
 exports.antoine = require('./antoine');
 exports.twitter = require('./twitter');
 exports.weather = require('./weather');
+exports.chuck = require('./chuck');
 
 

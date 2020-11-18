@@ -56,7 +56,8 @@ module.exports = async function (opts) {
         **Météo**  :point_right:  ${emojis[apiResponse.weather[0].icon]}
         **Vent**  :point_right:  ${apiResponse.wind.speed.toFixed(1)} Km/h`
 
-        opts.event.channel.send(msgResponse)
+        const msg = opts.event.channel.send(msgResponse)
+        msg.react()
 
     }).catch(() => opts.event.channel.send(":x: Cette ville n'existe pas"))
 
