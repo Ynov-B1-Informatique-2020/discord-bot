@@ -10,4 +10,4 @@ exports.jsp = require('./jsp');
 exports.echo = require('./echo');
 exports.about = require('./about');
 exports.deleteafter = require('./deleteafter');
-exports.twitter = require('https://twitter.com/home');
+exports.twitter = require('./twitter');
