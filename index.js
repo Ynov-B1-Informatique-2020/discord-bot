@@ -21,8 +21,8 @@ client.on('message', event => {
   console.log("-------------");
   console.log("Message :\t", event.content);
 
-  // Check if the message start with our prefix
-  if (event.content.startsWith(Config.prefix)) {
+  // Check if the message start with our prefix and if the author is not the bot
+  if (event.content.startsWith(Config.prefix) && event.author.id != client.user.id) {
 
     // Slit the message on each whitespace
     splitedMessage = event.content.substring(1).split(' ');
