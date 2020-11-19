@@ -7,8 +7,17 @@ A discord bot made by the *Toulouse Ynov Campus B1 Informatique G2 (2020/2021)* 
 >(2020/2021)* pour améliorer nos compétences en **GIT** et **JavaScript**/**NodeJS**
 
 ## Commands
-- `ping` - Bot reply *pong*
-- `echo` - Bot send back the arguments
+- `about` - Gives information about the bot
+- `avatar` - Bot gives the avatar of the command author
+- `chuck` - Bot gives a joke related to Chuck Norris
+- `date` - Bot gives the date at the desired location
+- `deleteafter` - Bot deletes the message after the given delay
+- `echo` - Bot sends back the arguments
+- `ping` - Bot replies *pong*
+- `random` - Bot gives a random number, between the specified bounds if they exist
+- `sha1` - Bot encrypts the given message in SHA-1
+- `twitter` - Bot gives the *Twitter* url
+- `weather` - Bot gives the weather at the desired location
 
 ---
 
