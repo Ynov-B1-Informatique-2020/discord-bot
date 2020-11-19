@@ -1,4 +1,5 @@
 const moment = require('moment-timezone');
+const discord = require('discord.js');
 
 const timezone = {
     "us": "America/Los_Angeles",
@@ -31,10 +32,12 @@ function getTime(zone) {
 
 }
 
+function generateEmbed(time) {
+    return new discord.MessageEmbed().setTitle(time).setColor(6901247)
+}
+
 module.exports = async function (opts) {
 
-    const msg = await opts.event.channel.send(getTime(opts.argsRaw[0]))
-
-    setTimeout(() => msg.edit(getTime(opts.argsRaw[0])), 10000)
+    await opts.event.channel.send(generateEmbed(getTime(opts.argsRaw[0])))
 
 }
