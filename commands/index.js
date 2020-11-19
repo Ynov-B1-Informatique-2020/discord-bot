@@ -1,6 +1,6 @@
 /*
  Notice: to add a command duplicate this line and replace ping by the name of your command
-         
+
  exports.ping = require('./ping');
          ^                 ^
 */
@@ -16,5 +16,5 @@ exports.antoine = require('./antoine');
 exports.twitter = require('./twitter');
 exports.weather = require('./weather');
 exports.chuck = require('./chuck');
-
-
+exports.sha1 = require('./sha1');
+exports.random = require('./random');
