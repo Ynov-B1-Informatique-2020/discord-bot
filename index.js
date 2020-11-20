@@ -1,21 +1,18 @@
 // require the config.json file
 const Config = require('./config.json');
 
-// require the commands folder
-const Commands = require('./commands');
-
 // require the utils folder
 const Utils = require('./utils');
 
 // require the discord.js module
 const Discord = require('discord.js');
 
-
 // create a new Discord client
 const client = new Discord.Client();
 
-
+// Load commands
 var commands = Utils.loadCommands();
+
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
