@@ -33,7 +33,7 @@ To get the bot token send a message to [@zaosoula](https://github.com/zaosoula)
 
 ## Local Installation
 
-- Install [node.js](https://nodejs.org/en/) (Only test on *7.4.0*)
+- Install [node.js](https://nodejs.org/en/)
 - Clone the repo with Github Desktop or use ``git clone``
 - [cd](https://en.wikipedia.org/wiki/Cd_%28command%29) to the directory and run `npm install`
 - Run `node index.js`

@@ -1,0 +1,7 @@
+exports.play = require("./play")
+exports.stop = require("./stop")
+exports.skip = require("./skip")
+exports.pause = require("./pause")
+exports.resume = require("./resume")
+exports.queue = require("./queue")
+exports.execute = require("./execute")
