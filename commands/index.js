@@ -9,13 +9,8 @@
 
 
 
-
-
                                         THIS FILE IS NOT USED ANYMORE
                                         The command folder is now automaticaly imported
-
-
-
 
 
 

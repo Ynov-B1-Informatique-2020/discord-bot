@@ -1,4 +1,5 @@
 const axios = require('axios');
+const discord = require('discord.js');
 
 const params = {
     q: 'Toulouse',
@@ -39,6 +40,15 @@ function getFlag(zone) {
     return ":flag_" + zone.toLowerCase() + ":"
 }
 
+function generateEmbed(street, flag, temp, temp_like, weather_icon, wind) {
+    return new discord.MessageEmbed()
+        .setTitle("Voici la météo pour **" + street + "** " + flag)
+        .setDescription(`**Température**  :point_right:  ${temp} ℃ ( ressentie ${temp_like} ℃ )
+        **Météo**  :point_right:  ${weather_icon}
+        **Vent**  :point_right: ${wind}  Km/h`)
+        .setColor(15790320)
+}
+
 module.exports = async function (opts) {
 
     const arg1 = opts.argsRaw.join(" ")
@@ -50,14 +60,10 @@ module.exports = async function (opts) {
         const apiResponse = response.data;
         const flag = getFlag(apiResponse.sys.country)
 
-        const msgResponse = `Voici la météo pour **${apiResponse.name}** ${flag}
-        
-        **Température**  :point_right:  ${apiResponse.main.temp.toFixed(1)}℃ ( ressentie ${apiResponse.main.feels_like.toFixed(1)}℃ ) 
-        **Météo**  :point_right:  ${emojis[apiResponse.weather[0].icon]}
-        **Vent**  :point_right:  ${apiResponse.wind.speed.toFixed(1)} Km/h`
+        const embed = generateEmbed(apiResponse.name, flag, apiResponse.main.temp.toFixed(1),
+            apiResponse.main.feels_like.toFixed(1), emojis[apiResponse.weather[0].icon], apiResponse.wind.speed.toFixed(1))
 
-        const msg = opts.event.channel.send(msgResponse)
-        msg.react()
+        opts.event.channel.send(embed)
 
     }).catch(() => opts.event.channel.send(":x: Cette ville n'existe pas"))
 
