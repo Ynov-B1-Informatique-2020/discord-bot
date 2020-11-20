@@ -18,3 +18,4 @@ exports.weather = require('./weather');
 exports.chuck = require('./chuck');
 exports.sha1 = require('./sha1');
 exports.random = require('./random');
+exports.clear = require('./clear');
