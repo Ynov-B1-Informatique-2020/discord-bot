@@ -18,6 +18,7 @@ A discord bot made by the *Toulouse Ynov Campus B1 Informatique G2 (2020/2021)* 
 - `sha1` - Bot encrypts the given message in SHA-1
 - `twitter` - Bot gives the *Twitter* url
 - `weather` - Bot gives the weather at the desired location
+- `clear [amount]` - Bot delete the selected amount of messages (needs MANAGE_MESSAGES permission)
 
 ---
 
