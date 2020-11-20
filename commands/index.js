@@ -19,4 +19,4 @@ exports.chuck = require('./chuck');
 exports.sha1 = require('./sha1');
 exports.random = require('./random');
 exports.music = require('./music');
-
+exports.clear = require('./clear');
