@@ -8,9 +8,8 @@ module.exports = () => {
     description: 'No description provided',
     usage: null,
     aliases: [],
-    execute(opts) {
-      console.log(opts.name+": no function provided");
-    },
+    init(opts) {},
+    execute(opts) {},
   };
   let commands = [];
 
