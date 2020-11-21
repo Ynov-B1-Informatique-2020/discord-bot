@@ -27,5 +27,6 @@
     "fluent-ffmpeg": "^2.1.2",
     "ytdl-core": "^4.0.5",
     "@discordjs/opus": "^0.3.3"
+    "jsonfile": "6.1.0",
   }
 }
