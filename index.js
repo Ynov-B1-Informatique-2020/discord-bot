@@ -13,6 +13,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
+Utils.notifications.displayAll()
+
+
 const isMainInstance = Utils.isMainInstance;
 console.log('Is main instance ?',isMainInstance);
 
