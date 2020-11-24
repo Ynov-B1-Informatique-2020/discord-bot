@@ -121,3 +121,4 @@ dist
 config.json
 storage/
 private/
+.notifications/read.json
