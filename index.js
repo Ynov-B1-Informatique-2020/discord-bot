@@ -12,6 +12,10 @@ const Discord = require('discord.js');
 // create a new Discord client
 const client = new Discord.Client();
 
+
+const isMainInstance = Utils.isMainInstance;
+console.log('Is main instance ?',isMainInstance);
+
 // Load commands
 const commands = Utils.loadCommands();
 
@@ -33,7 +37,6 @@ db.load();
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', (event) => {
-  console.log('Discord ready!');
   const commandInits = commands.map(x => x.init({
     Discord,
     Config,
@@ -43,19 +46,23 @@ client.once('ready', (event) => {
     commands,
     commandName: x.name
   }));
+  console.log('Discord ready!');
 });
 
 // this event will trigger each time a message is sent
+
+client.on('message', messageHandler);
+
 client.on('messageUpdate', (oldMessage, newMessage)=>{
   newMessage.oldMessage = oldMessage;
   messageHandler(newMessage);
 });
-client.on('message', messageHandler);
+
 
 function messageHandler(event) {
   
   if (event.content == '!pingallbot') {
-    event.channel.send(`**${Config.prefix}**: I'm up, ${commands.length} commands loaded`);
+    event.channel.send(`**${Config.prefix}** ${isMainInstance?'(**Main instance**)':'(Dev instance)'}: I'm up, ${commands.length} commands loaded`);
   }
   // Check if the message start with our prefix and the author is not the bot
   if (!event.content.startsWith(Config.prefix)) return;
