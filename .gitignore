@@ -102,7 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
-config.json
 
 # VSCode 
 .vscode/*
@@ -117,3 +116,8 @@ config.json
 
 # JetBrains tool
 .idea
+
+# Bot files
+config.json
+storage/
+private/

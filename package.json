@@ -24,9 +24,9 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "9.0.1",
     "js-sha1": "^0.6.0",
     "moment-timezone": "^0.5.32",
-    "ytdl-core": "^4.0.5",
-    "jsonfile": "6.1.0"
+    "ytdl-core": "^4.0.5"
   }
 }
