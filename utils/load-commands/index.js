@@ -6,8 +6,9 @@ module.exports = () => {
   let dirname = path.join(__dirname, '../../commands');
   let defaultCommandObject = {
     description: 'No description provided',
-    usage: null,
+    usage: '',
     aliases: [],
+    author: 'none',
     init(opts) {},
     execute(opts) {},
   };

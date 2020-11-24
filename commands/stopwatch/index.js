@@ -1,7 +1,8 @@
 module.exports = {
   description: '',
-  usage: '',
-  aliases: ['storage'],
+  usage: '[start|stop]',
+	aliases: ['storage'],
+	author: 'zaosoula',
 	db: null,
 	init(opts) {
 		this.db = opts.db.self(opts).data;
@@ -19,7 +20,7 @@ module.exports = {
 		let message = `:stopwatch: ${this.msToTime(stopwatch.duration)}`;
 
 		if(!stopwatch.isRunning) {
-			message += `\n:pause_button: On pause`;
+			message += `\n:pause_button: Stopped`;
 		}
 		
 		opts.event.channel.send(new opts.Discord.MessageEmbed().setTitle(message).setColor(6901247))	
