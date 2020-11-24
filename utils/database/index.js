@@ -1,5 +1,4 @@
-const jsonfile = require('jsonfile')
-const fs = require('fs')
+const fs = require('fs-extra')
 
 class Database {
   constructor(path, defaults) {
@@ -10,15 +9,17 @@ class Database {
 
   load() {
     if (!fs.existsSync(this.path)) {
-      jsonfile.writeFileSync(this.path, this.defaults)
+      fs.outputJsonSync(this.path, this.defaults)
     }
 
-    let data = jsonfile.readFileSync(this.path);
+    let data = fs.readJsonSync(this.path);
     this.data = Object.assign({}, this.defaults, data);
+    return this;
   }
 
   save() {
-    jsonfile.writeFileSync(this.path, this.data)
+    fs.outputJsonSync(this.path, this.data)
+    return this;
   }
 
   self(opts) {
