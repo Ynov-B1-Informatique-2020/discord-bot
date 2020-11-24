@@ -46,6 +46,7 @@ client.once('ready', (event) => {
     commands,
     commandName: x.name
   }));
+  console.log('Discord ready!');
 });
 
 // this event will trigger each time a message is sent
