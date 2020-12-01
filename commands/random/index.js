@@ -1,6 +1,6 @@
-const {dispHelp} = require("./help");
+const {dispHelp} = require("./display");
 const {randInt, randFloat} = require("./randnbr");
-const {randList, randPeople} = require("./randtext");
+const {randList, randPeople, randMrl} = require("./randtext");
 
 module.exports = {
     description: 'Bot gives a random number, between the specified bounds if they exist',
@@ -40,6 +40,9 @@ module.exports = {
                     case "players":
                         randPeople(args, chan, opts.event);
                         break
+                    case "mrl":
+                        randMrl(args, chan);
+                        break;
                     default:
                         dispHelp(chan)
                         break
